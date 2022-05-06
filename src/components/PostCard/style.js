@@ -11,13 +11,3 @@ export const Card = styled.div`
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
     border-radius: 6px;
 `;
-export const Button = styled.form`
-    color: #FFFFFF;
-    font-size: 1.8em;
-    background: #0275d8;
-    text-align: center;
-    height: 50%;
-    border: 2px solid;
-    border-radius: 8px;
-    width: 10%;
-`
