@@ -21,7 +21,7 @@ useEffect(() => {
     <div>
       <Card key={article.id}>
         <h1>{article.title}</h1>
-        <h3>{article.newsSite}</h3>
+        <a href={article.url}>{article.newsSite}</a>
         <p>Published at {moment(article.publishedAt).format('LLLL')}</p>
         <p>Updated at {moment(article.updatedAt).format('LLLL')}</p>
         <p>{article.summary}</p>

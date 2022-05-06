@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+   max-width: 100%;
+   height: 70%;
+   flex-direction: column;
+   display: flex;
+`
 export const Card = styled.div`
     display: flex;
     align-items: center;
@@ -15,7 +21,7 @@ export const Button = styled.form`
     color: #FFFFFF;
     font-size: 1.8em;
     background: #0275d8;
-    height: 80%;
+    height: 50%;
     border: 2px solid;
     border-radius: 8px;
     width: 100%;
