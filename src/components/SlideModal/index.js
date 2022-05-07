@@ -27,8 +27,8 @@ const Prev = () => {
                     <div>
                        <IoIosClose
                        onClick={() => setOpenSlide(false)}
-                       style={{right: '20px', position: 'absolute', top: '15px'}}
-                       size="30"
+                       style={{right: '15px', position: 'absolute', top: '-5px'}}
+                       size="50"
                        />
                        <div>
                            <h2>{article.title}</h2>
