@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Select = styled.select`
   width: 5%;
-  height:35px;
+  height: 35px;
   background: white;
   color: gray;
   padding-left: 5px;
   font-size: 14px;
-  border:none;
+  border: none;
   margin-left: 10px;
   border-radius: 5px;
 
