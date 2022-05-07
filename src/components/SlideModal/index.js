@@ -36,7 +36,7 @@ const Prev = () => {
                        <div>
                            <span>Published at {moment(article.publishedAt).format('LLLL')} | </span>
                            <span>Updated at {moment(article.updatedAt).format('LLLL')}</span>
-                           <h3><a href={article.url}>{article.newsSite}</a></h3>
+                           <h3><a href={article.url} target="_blank">{article.newsSite}</a></h3>
                        </div>
                        <div>
                            <div>
