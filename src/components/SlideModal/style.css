@@ -1,0 +1,43 @@
+.slide {
+  transition-duration: 1s;
+  opacity: 1;
+}
+
+.slide_active{
+  opacity: 1;
+  transition-duration: 1s;
+}
+
+.window {
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  background-color: #FFFFFF;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.right {
+  cursor: pointer;
+  color: #000000;
+  top: 95%;
+  use-select: none;
+  position: absolute;
+  right: 50px;
+  font-size: 1px;
+}
+
+.left {
+  cursor: pointer;
+  color: #000000;
+  top: 95%;
+  left: 50px;
+  use-select: none;
+  position: absolute;
+  font-size: 1px;
+}

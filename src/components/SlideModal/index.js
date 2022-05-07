@@ -17,9 +17,9 @@ const Prev = () => {
     setImage(image === 0 ? length - 1 : image - 1);
 }
   return (
-      <section>
-          <FaArrowRight size="30" onClick={Next}/>
-          <FaArrowLeft size="30" onClick={Prev}/>
+      <section className="window">
+          <FaArrowRight size="30" onClick={Next} className="right"/>
+          <FaArrowLeft size="30" onClick={Prev} className="left"/>
           {currentArticles.map((article, index) => (
             <div key={index} className={index === image ? 'slide_active' : 'slide'}>
                 {index === image && (
