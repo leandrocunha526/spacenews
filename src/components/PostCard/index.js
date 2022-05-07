@@ -11,6 +11,7 @@ const handleDetail = (article) => {
     <Card onClick={() => handleDetail(index)} key={article.id}>
         <h2>{article.title}</h2>
         <p>{moment(article.publishedAt).format('LLLL')}</p>
+        <p>A tip select card for article details.</p>
     </Card>
    )
 }
