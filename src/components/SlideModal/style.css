@@ -26,7 +26,7 @@
   cursor: pointer;
   color: #000000;
   top: 95%;
-  use-select: none;
+  user-select: none;
   position: absolute;
   right: 50px;
   font-size: 1px;
@@ -37,7 +37,7 @@
   color: #000000;
   top: 95%;
   left: 50px;
-  use-select: none;
+  user-select: none;
   position: absolute;
   font-size: 1px;
 }
