@@ -17,7 +17,7 @@ const Prev = () => {
     setImage(image === 0 ? length - 1 : image - 1);
 }
   return (
-      <section className="window">
+      <section className="modal">
           <FaArrowRight size="30" onClick={Next} className="right"/>
           <FaArrowLeft size="30" onClick={Prev} className="left"/>
           {currentArticles.map((article, index) => (
@@ -30,7 +30,7 @@ const Prev = () => {
                        style={{right: '15px', position: 'absolute', top: '5px', cursor: 'pointer'}}
                        size="40"
                        />
-                       <div>
+                       <div class="modal-dialog">
                            <h2>{article.title}</h2>
                        </div>
                        <div>
