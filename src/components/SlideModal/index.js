@@ -24,27 +24,27 @@ const Prev = () => {
             <div key={index} className={index === image ? 'slide_active' : 'slide'}>
                 {index === image && (
                 <>
-                    <div>
+                    <div className="modal">
                        <IoIosClose
                        onClick={() => setOpenSlide(false)}
-                       style={{right: '15px', position: 'absolute', top: '-5px'}}
-                       size="50"
+                       style={{right: '15px', position: 'absolute', top: '5px'}}
+                       size="60"
                        />
                        <div>
                            <h2>{article.title}</h2>
                        </div>
-                       <div>
+                       <div className="info">
+                       <span>More info: <a href={article.url} target="_blank" rel="noreferrer">{article.newsSite}</a> | </span>
                            <span>Published at {moment(article.publishedAt).format('LLLL')} | </span>
                            <span>Updated at {moment(article.updatedAt).format('LLLL')}</span>
-                           <h3><a href={article.url} target="_blank" rel="noreferrer">{article.newsSite}</a></h3>
                        </div>
                        <div>
                            <div>
                                <img
                                 src={article.imageUrl}
                                 alt="article img"
-                                 style={{
-                                    marginTop: 10,
+                                style={{
+                                    marginTop: 15,
                                     display: "inline-block",
                                     maxWidth: "100%",
                                     width: 560,
