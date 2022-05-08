@@ -30,7 +30,7 @@ const Prev = () => {
                        style={{right: '15px', position: 'absolute', top: '5px', cursor: 'pointer'}}
                        size="40"
                        />
-                       <div class="modal-dialog">
+                       <div className="modal-dialog">
                            <h2>{article.title}</h2>
                        </div>
                        <div>
