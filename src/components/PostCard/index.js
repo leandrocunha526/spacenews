@@ -8,10 +8,10 @@ const handleDetail = (article) => {
     setImage(article);
 }
     return(
-    <Card onClick={() => handleDetail(index)} key={article.id}>
+    <Card key={article.id}>
         <h2>{article.title}</h2>
         <p>{moment(article.publishedAt).format('LLLL')}</p>
-        <p>A tip: you can select card for get article details.</p>
+        <button onClick={() => handleDetail(index)}>See more</button>
     </Card>
    )
 }
