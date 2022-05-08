@@ -24,7 +24,7 @@ const Prev = () => {
             <div key={index} className={index === image ? 'slide_active' : 'slide'}>
                 {index === image && (
                 <>
-                    <div className="modal">
+                    <div>
                        <IoIosClose
                        onClick={() => setOpenSlide(false)}
                        style={{right: '15px', position: 'absolute', top: '5px'}}
