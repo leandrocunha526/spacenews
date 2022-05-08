@@ -22,10 +22,6 @@
   border-radius: 8px;
 }
 
-.info {
-  display: flex;
-}
-
 .right {
   cursor: pointer;
   color: #000000;

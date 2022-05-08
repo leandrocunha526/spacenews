@@ -33,12 +33,18 @@ const Prev = () => {
                        <div>
                            <h2>{article.title}</h2>
                        </div>
-                       <div className="info">
-                       <span>More info: <a href={article.url} target="_blank" rel="noreferrer">{article.newsSite}</a> | </span>
-                           <span>Published at {moment(article.publishedAt).format('LLLL')} | </span>
-                           <span>Updated at {moment(article.updatedAt).format('LLLL')}</span>
-                       </div>
                        <div>
+                           <span>Published at {moment(article.publishedAt).format('LLLL')}</span>
+                        </div>
+                        <div>
+                            <span>Updated at {moment(article.updatedAt).format('LLLL')}</span>
+                        </div>
+                        <div>
+                           <span>More info: <a href={article.url} target="_blank" rel="noreferrer">
+                            {article.newsSite}
+                            </a>
+                           </span>
+                        </div>
                            <div>
                                <img
                                 src={article.imageUrl}
@@ -60,7 +66,6 @@ const Prev = () => {
                                </div>
                            </div>
                        </div>
-                    </div>
                 </>
                 )}
             </div>
