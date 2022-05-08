@@ -27,8 +27,8 @@ const Prev = () => {
                     <div>
                        <IoIosClose
                        onClick={() => setOpenSlide(false)}
-                       style={{right: '15px', position: 'absolute', top: '5px'}}
-                       size="60"
+                       style={{right: '15px', position: 'absolute', top: '5px', cursor: 'pointer'}}
+                       size="40"
                        />
                        <div>
                            <h2>{article.title}</h2>
@@ -44,10 +44,13 @@ const Prev = () => {
                                 src={article.imageUrl}
                                 alt="article img"
                                 style={{
-                                    marginTop: 15,
-                                    display: "inline-block",
-                                    maxWidth: "100%",
-                                    width: 560,
+                                    textAlign: "center",
+                                    display: "block",
+                                    justifyContent: "center",
+                                    alignItems: "center",
+                                    margin: "auto",
+                                    width: "50%",
+                                    marginTop: 15
                                 }}
                                />
                            </div>
