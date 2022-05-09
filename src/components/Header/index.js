@@ -1,6 +1,7 @@
 import "./style.css";
 import useData from "../../hooks/useData";
 import api from "../../services/api";
+import { AiFillHome } from "react-icons/ai"
 
 export default function Header(){
     const {setData, form, setForm} = useData();
@@ -33,6 +34,7 @@ export default function Header(){
 
     return (
      <div className="header">
+        <a href="/"><AiFillHome/></a>
         <div className="form">
             <input
                 type="text"
