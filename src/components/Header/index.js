@@ -6,15 +6,36 @@ import { AiFillHome } from "react-icons/ai"
 export default function Header(){
     const {setData, form, setForm} = useData();
 
-    const inputTitle = (e) => {
+    const input = (e) => {
         setForm({...form, [e.target.name] : e.target.value});
     }
-    const filter = async (e) => {
-        e.preventDefault();
-        let param = "articles?_limit=100"
 
-        if(form.title) {
-                param = `?title_contains=${form.title}`;
+    const filterTitle = async (e) => {
+        e.preventDefault();
+        let param = "articles?_limit=100";
+
+        if(form.title){
+            param = `?title_contains=${form.title}`;
+        }
+       try{
+            let response = await api.get(`/articles/${param}`);
+            const { data } = response;
+            setForm({
+                title: "",
+            });
+            setData(data);
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
+
+    const filterDate = async(e) => {
+        e.preventDefault();
+        let param = "articles?_limit=100";
+
+        if (form.initialDate && form.finalDate){
+            param = `?publishedAt_gte=${form.initialDate}&publishedAt_lte=${form.finalDate}`;
         }
 
         try{
@@ -23,7 +44,6 @@ export default function Header(){
             setForm({
                 initialDate: "",
                 finalDate: "",
-                title: "",
             });
             setData(data);
         }
@@ -36,20 +56,34 @@ export default function Header(){
      <div className="header">
         <a href="/"><AiFillHome/></a>
         <div className="form">
-        <form onSubmit={filter}>
-            <input
+        <form onSubmit={filterTitle}>
+        <input
                 type="text"
                 name="title"
                 placeholder="Search by title"
-                onChange={inputTitle}
+                onChange={input}
                 value={form.title}
-            />
-            <label>Initial date:</label>
-            <input type="date" />
-            <label>Final date:</label>
-            <input type="date" />
-            <button type="submit" onClick={filter}>Search</button>
-            </form>
+        />
+        <button type="submit" onChange={filterTitle}>Search</button>
+        </form>
+
+        <form onSubmit={filterDate}>
+        <label>Initial date:</label>
+        <input
+                type="date"
+                name="initialDate"
+                value={form.initialDate}
+                onChange={input}
+        />
+        <label>Final date:</label>
+        <input
+                type="date"
+                name="finalDate"
+                value={form.finalDate}
+                onChange={input}
+        />
+        <button type="submit" onClick={filterDate}>Search</button>
+        </form>
         </div>
         </div>
     )
