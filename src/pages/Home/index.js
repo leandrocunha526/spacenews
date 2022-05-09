@@ -6,6 +6,7 @@ import LimitSelect from "../../components/LimitSelect";
 import Pagination from "../../components/Pagination";
 import SlideModal from "../../components/SlideModal";
 import useData from "../../hooks/useData";
+import Header from "../../components/Header";
 
 export default function Home() {
 const [items, setItems] = useState(10);
@@ -39,6 +40,9 @@ useEffect(() => {
 
     return (
     <Container>
+
+      <Header/>
+
       <LimitSelect
         items={items}
         setItems={setItems}

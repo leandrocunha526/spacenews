@@ -1,0 +1,42 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(0, 0%, 95%);
+  padding: 1%;
+  border-radius: 8px;
+  height: 50%;
+  margin: 5px;
+}
+
+.form {
+  border-radius: 5px;
+  gap: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+}
+
+.form button {
+    color: hsl(0, 0%, 95%);
+    font-size: 1em;
+    background: #0000FF;
+    height: 40px;
+    border: 2px solid;
+    border-radius: 5px;
+    width: 80px;
+}
+
+.form input {
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 1px;
+  height: 30px;
+}
+
+@media (max-width: 730px) {
+  .form {
+     flex-direction: column;
+  }
+}
