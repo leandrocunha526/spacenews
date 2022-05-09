@@ -11,16 +11,16 @@
 .right {
   cursor: pointer;
   color: #000000;
-  top: 30%;
+  top: 10%;
   position: absolute;
-  right: 40px;
+  right: 10px;
 }
 
 .left {
   cursor: pointer;
   color: #000000;
-  top: 30%;
-  left: 40px;
+  top: 10%;
+  left: 10px;
   position: absolute;
 }
 
