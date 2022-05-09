@@ -10,8 +10,8 @@ export default function Header(){
         setForm({...form, [e.target.name] : e.target.value});
     }
     const filter = async (e) => {
-            let param = "articles?_limit=100"
-            e.preventDefault();
+        e.preventDefault();
+        let param = "articles?_limit=100"
 
         if(form.title) {
                 param = `?title_contains=${form.title}`;
@@ -36,6 +36,7 @@ export default function Header(){
      <div className="header">
         <a href="/"><AiFillHome/></a>
         <div className="form">
+        <form onSubmit={filter}>
             <input
                 type="text"
                 name="title"
@@ -47,7 +48,8 @@ export default function Header(){
             <input type="date" />
             <label>Final date:</label>
             <input type="date" />
-            <button type="button" onClick={filter}>Search</button>
+            <button type="submit" onClick={filter}>Search</button>
+            </form>
         </div>
         </div>
     )
