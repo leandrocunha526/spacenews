@@ -14,11 +14,13 @@ export default function Header(){
         e.preventDefault();
         let param = "articles?_limit=100";
 
+        let param1 = null;
+
         if(form.title){
-            param = `?title_contains=${form.title}`;
+            param1 = `&title_contains=${form.title}`;
         }
        try{
-            let response = await api.get(`/articles/${param}`);
+            let response = await api.get(param + param1);
             const { data } = response;
             setForm({
                 title: "",
@@ -34,12 +36,14 @@ export default function Header(){
         e.preventDefault();
         let param = "articles?_limit=100";
 
+        let param1 = null;
+
         if (form.initialDate && form.finalDate){
-            param = `?publishedAt_gte=${form.initialDate}&publishedAt_lte=${form.finalDate}`;
+            param1 = `&publishedAt_gte=${form.initialDate}&publishedAt_lte=${form.finalDate}`;
         }
 
         try{
-            let response = await api.get(`/articles/${param}`);
+            let response = await api.get(param+param1);
             const { data } = response;
             setForm({
                 initialDate: "",
