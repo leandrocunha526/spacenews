@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "./style.css";
 import useData from "../../hooks/useData";
 import api from "../../services/api";
@@ -5,6 +6,8 @@ import { AiFillHome } from "react-icons/ai"
 
 export default function Header(){
     const {setData, form, setForm} = useData();
+
+    const [message, setMessage] = useState("");
 
     const input = (e) => {
         setForm({...form, [e.target.name] : e.target.value});
@@ -18,6 +21,9 @@ export default function Header(){
 
         if(form.title){
             param1 = `&title_contains=${form.title}`;
+        }
+        else {
+            setMessage("Please, insert a title to search");
         }
        try{
             let response = await api.get(param + param1);
@@ -41,9 +47,12 @@ export default function Header(){
         if (form.initialDate && form.finalDate){
             param1 = `&publishedAt_gte=${form.initialDate}&publishedAt_lte=${form.finalDate}`;
         }
+        else {
+            setMessage("Please, insert a initial and final date to search");
+        }
 
         try{
-            let response = await api.get(param+param1);
+            let response = await api.get(param + param1);
             const { data } = response;
             setForm({
                 initialDate: "",
@@ -89,6 +98,7 @@ export default function Header(){
         <button type="submit" onClick={filterDate}>Search</button>
         </form>
         </div>
+            <span>{message}</span>
         </div>
     )
 }
