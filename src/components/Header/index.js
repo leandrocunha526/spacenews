@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import "./style.css";
 import useData from "../../hooks/useData";
 import api from "../../services/api";
-import { AiFillHome } from "react-icons/ai"
+import { AiFillHome } from "react-icons/ai";
 
 export default function Header(){
-    const {setData, form, setForm} = useData();
+    const {setData, date, setDate, title, setTitle} = useData();
 
     const [message, setMessage] = useState("");
 
     const input = (e) => {
-        setForm({...form, [e.target.name] : e.target.value});
+        setTitle({...title, [e.target.name] : e.target.value});
+    }
+
+    const inputDate = (e) => {
+        setDate({...date, [e.target.name] : e.target.value});
     }
 
     const filterTitle = async (e) => {
@@ -19,8 +23,8 @@ export default function Header(){
 
         let param1 = null;
 
-        if(form.title){
-            param1 = `&title_contains=${form.title}`;
+        if(title.title){
+            param1 = `&title_contains=${title.title}`;
         }
         else {
             setMessage("Please, insert a title to search");
@@ -28,7 +32,7 @@ export default function Header(){
        try{
             let response = await api.get(param + param1);
             const { data } = response;
-            setForm({
+            setTitle({
                 title: "",
             });
             setData(data);
@@ -44,8 +48,8 @@ export default function Header(){
 
         let param1 = null;
 
-        if (form.initialDate && form.finalDate){
-            param1 = `&publishedAt_gte=${form.initialDate}&publishedAt_lte=${form.finalDate}`;
+        if (date.initialDate && date.finalDate){
+            param1 = `&publishedAt_gte=${date.initialDate}&publishedAt_lte=${date.finalDate}`;
         }
         else {
             setMessage("Please, insert a initial and final date to search");
@@ -54,7 +58,7 @@ export default function Header(){
         try{
             let response = await api.get(param + param1);
             const { data } = response;
-            setForm({
+            setDate({
                 initialDate: "",
                 finalDate: "",
             });
@@ -75,7 +79,7 @@ export default function Header(){
                 name="title"
                 placeholder="Search by title"
                 onChange={input}
-                value={form.title}
+                value={title.title}
         />
         <button type="submit" onChange={filterTitle}>Search</button>
         </form>
@@ -85,15 +89,15 @@ export default function Header(){
         <input
                 type="date"
                 name="initialDate"
-                value={form.initialDate}
-                onChange={input}
+                value={date.initialDate}
+                onChange={inputDate}
         />
         <label>Final date:</label>
         <input
                 type="date"
                 name="finalDate"
-                value={form.finalDate}
-                onChange={input}
+                value={date.finalDate}
+                onChange={inputDate}
         />
         <button type="submit" onClick={filterDate}>Search</button>
         </form>

@@ -11,21 +11,26 @@ export function useUserData(){
 
     const [image, setImage] = useState(0);
 
-    const [form, setForm] = useState({
+    const [date, setDate] = useState({
         initialDate: "",
         finalDate: "",
+    });
+
+    const [title, setTitle] = useState({
         title: "",
     });
 
     return {
         data,
-        form,
+        date,
         image,
         navigate,
         openSlide,
+        title,
         setData,
-        setForm,
+        setDate,
         setImage,
-        setOpenSlide
+        setOpenSlide,
+        setTitle,
     }
 }
