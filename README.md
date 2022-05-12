@@ -45,3 +45,4 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [Moment](https://momentjs.com/)
 - [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
 - [React useData hook for fetching data and reusing code](https://medium.com/swlh/creating-react-hook-for-fetching-data-4193d8479138)
+- [Context](https://pt-br.reactjs.org/docs/context.html)
