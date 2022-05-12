@@ -32,8 +32,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 # Documentation
 ### The project was developed with the following documentation
 
-- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-- [React documentation](https://reactjs.org/).
+- [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started)
+- [React documentation](https://reactjs.org/)
 - [Code splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 - [Analyzing the bundle size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 - [Deployment](https://facebook.github.io/create-react-app/docs/deployment)
@@ -44,3 +44,4 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 - [Slide Modal in React](https://yamagata-developers-society.github.io/blog/react-hooks-slide-in-modal/)
 - [Moment](https://momentjs.com/)
 - [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start)
+- [React useData hook for fetching data and reusing code](https://medium.com/swlh/creating-react-hook-for-fetching-data-4193d8479138)
