@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
-import Limit from './components/LimitSelect';
+import { render, screen } from "@testing-library/react";
+import Limit from "./components/LimitSelect";
 
-test('selectq', () => {
+test("select limit", () => {
   render(<Limit />);
-  screen.getByDisplayValue(10)
+  screen.getByDisplayValue(10);
 });
